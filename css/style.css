@@ -1,0 +1,501 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #111111;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #d90000;
+    color: white;
+    padding: 0 40px 55px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+nav {
+    background-color: #111111;
+    padding: 15px 20px;
+    margin: 0 -40px 50px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 30px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.2s;
+}
+
+nav a:hover {
+    color: #d90000;
+    transform: skew(-8deg) scale(1.05);
+}
+
+header h1 {
+    font-size: 64px;
+    margin: 0;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -3px;
+    font-style: italic;
+    transform: skew(-5deg);
+}
+
+header h2 {
+    font-size: 26px;
+    margin: 10px 0 0;
+    text-transform: uppercase;
+    transform: skew(-5deg);
+}
+
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.section-title {
+    color: white;
+    font-size: 32px;
+    text-transform: uppercase;
+    border-left: 8px solid #d90000;
+    padding-left: 15px;
+    margin: 40px 0 25px;
+}
+
+.intro {
+    background: white;
+    color: #111111;
+    padding: 30px;
+    border-left: 10px solid #d90000;
+    box-shadow: 10px 10px 0 #d90000;
+    margin-bottom: 50px;
+}
+
+.intro p {
+    line-height: 1.6;
+}
+
+/* TASK 0 — FLEXBOX NAVIGATION */
+
+.flex-demo-nav {
+    background: #111111;
+    padding: 20px;
+    margin: 20px 0 40px;
+    border: 3px solid #d90000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-demo-nav .logo {
+    font-size: 26px;
+    font-weight: 900;
+    font-style: italic;
+    color: #d90000;
+}
+
+.flex-demo-nav .links {
+    display: flex;
+    gap: 25px;
+}
+
+.flex-demo-nav .links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* TASK 1 — FLEX CARDS */
+
+.card-row {
+    display: flex;
+    gap: 25px;
+    align-items: stretch;
+    margin-bottom: 50px;
+}
+
+.card {
+    flex: 1;
+    background: white;
+    color: #111111;
+    padding: 20px;
+    border-top: 7px solid #d90000;
+    box-shadow: 8px 8px 0 #d90000;
+    display: flex;
+    flex-direction: column;
+    transition: 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-8px) rotate(-1deg);
+    box-shadow: 12px 12px 0 #d90000;
+}
+
+.card-image {
+    height: 150px;
+    background: #111111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #d90000;
+    font-size: 42px;
+    font-weight: 900;
+    font-style: italic;
+    margin-bottom: 18px;
+}
+
+.card h3 {
+    margin: 0 0 10px;
+    text-transform: uppercase;
+}
+
+.card p {
+    line-height: 1.5;
+    flex: 1;
+}
+
+.button {
+    display: inline-block;
+    background: #d90000;
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    border: 3px solid #d90000;
+    transition: 0.2s;
+}
+
+.button:hover {
+    background: #111111;
+    border-color: #111111;
+}
+
+/* TASK 2 — GRID AREAS */
+
+.grid-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+    min-height: 550px;
+    margin-bottom: 50px;
+    border: 3px solid #d90000;
+}
+
+.grid-header {
+    grid-area: header;
+    background: #d90000;
+    padding: 25px;
+    font-size: 28px;
+    font-weight: 900;
+    font-style: italic;
+}
+
+.grid-sidebar {
+    grid-area: sidebar;
+    background: white;
+    color: #111111;
+    padding: 25px;
+    border-right: 5px solid #d90000;
+}
+
+.grid-sidebar h3 {
+    margin-top: 0;
+    color: #d90000;
+    text-transform: uppercase;
+}
+
+.grid-sidebar ul {
+    padding-left: 20px;
+}
+
+.grid-sidebar li {
+    margin-bottom: 12px;
+    font-weight: bold;
+}
+
+.grid-main {
+    grid-area: main;
+    background: #eeeeee;
+    color: #111111;
+    padding: 30px;
+}
+
+.grid-main h3 {
+    margin-top: 0;
+    text-transform: uppercase;
+}
+
+.grid-footer {
+    grid-area: footer;
+    background: #111111;
+    padding: 20px;
+    border-top: 4px solid #d90000;
+    text-align: center;
+}
+
+/* TASK 3 — GALLERY */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-bottom: 50px;
+}
+
+.gallery-item {
+    position: relative;
+    height: 220px;
+    background: #111111;
+    border: 4px solid #d90000;
+    overflow: hidden;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    transition: 0.25s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.06);
+}
+
+.caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 12px;
+    background: rgba(17, 17, 17, 0.92);
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    transform: translateY(100%);
+    transition: 0.2s;
+}
+
+.gallery-item:hover .caption {
+    transform: translateY(0);
+}
+
+/* TASK 4 — PORTFOLIO */
+
+.portfolio-layout {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.project {
+    background: white;
+    color: #111111;
+    padding: 25px;
+    border-left: 10px solid #d90000;
+    box-shadow: 8px 8px 0 #d90000;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.project h3 {
+    margin: 0;
+    color: #d90000;
+    text-transform: uppercase;
+}
+
+.project p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.project .button {
+    align-self: flex-start;
+}
+
+.portfolio-sidebar {
+    background: #d90000;
+    color: white;
+    padding: 25px;
+}
+
+.portfolio-sidebar h3 {
+    margin-top: 0;
+    font-size: 28px;
+    text-transform: uppercase;
+}
+
+.portfolio-sidebar ul {
+    padding-left: 20px;
+}
+
+.portfolio-sidebar li {
+    margin-bottom: 12px;
+    font-weight: bold;
+}
+
+footer {
+    background-color: #111111;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 50px;
+    border-top: 4px solid #d90000;
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 0 20px 35px;
+    }
+
+    nav {
+        margin: 0 -20px 35px;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px 20px;
+    }
+
+    header h1 {
+        font-size: 46px;
+    }
+
+    .card-row {
+        flex-direction: column;
+    }
+
+    .grid-layout {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "sidebar"
+            "main"
+            "footer";
+    }
+
+    .grid-sidebar {
+        border-right: 0;
+        border-bottom: 5px solid #d90000;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* GALLERY IMAGES */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-bottom: 50px;
+}
+
+.gallery-item {
+    position: relative;
+    height: 220px;
+    background: #111111;
+    border: 4px solid #d90000;
+    overflow: hidden;
+}
+
+.gallery-item::before {
+    content: "YOUR IMAGE";
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #d90000;
+    font-size: 28px;
+    font-weight: 900;
+    font-style: italic;
+    background: linear-gradient(135deg, #111111 0 55%, #d90000 55% 65%, #eeeeee 65% 100%);
+}
+
+.gallery-item img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: 0.2s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.06);
+}
+
+.caption {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 12px;
+    background: rgba(17, 17, 17, 0.92);
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    transform: translateY(100%);
+    transition: 0.2s;
+}
+
+.gallery-item:hover .caption {
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* TASK 1 CARD IMAGES */
+
+.card-image {
+    height: 150px;
+    padding: 0;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}

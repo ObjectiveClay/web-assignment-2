@@ -1,0 +1,3 @@
+TASK 1: add card1.jpg, card2.jpg, card3.jpg
+TASK 3: add image1.jpg through image9.jpg
+You can use PNG files too, but then change the file extension in the HTML.
